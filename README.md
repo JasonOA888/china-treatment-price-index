@@ -1,5 +1,8 @@
 # ChinaHealth Open China Treatment Price Index 2026 (v1)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23684545.svg)](https://doi.org/10.5281/zenodo.23684545)
+
+
 Published prices for **41 procedures** that foreign patients commonly seek in China, in **92 records** across three hospital tiers, each with a source URL, source type, publication date, check date (2026-10-27) and confidence rating. 14 procedures carry a citable US reference price.
 
 China has no national treatment price list. This dataset puts official caps and averages, public hospital package prices, VIP (特需) prices and private hospital prices side by side, with no numbers we could not source.
