@@ -1,10 +1,14 @@
-cff-version: 1.2.0
+cff-version: 1.2.1
 message: "If you use this dataset, please cite it as below."
 type: dataset
 title: "ChinaHealth Open China Treatment Price Index 2026"
-version: 1.2.0
-doi: "10.5281/zenodo.23725366"
-date-released: 2026-10-28
+version: 1.2.1
+doi: "10.5281/zenodo.23684544"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23735656"
+    description: "Version 1.2.1"
+date-released: 2026-10-29
 license: CC-BY-4.0
 authors:
   - name: "ChinaHealth"

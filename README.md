@@ -1,4 +1,4 @@
-# ChinaHealth Open China Treatment Price Index 2026 (v1.2.0)
+# ChinaHealth Open China Treatment Price Index 2026 (v1.2.1)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23684544.svg)](https://doi.org/10.5281/zenodo.23684544)
 
@@ -15,15 +15,15 @@ China has no national treatment price list. This dataset puts official caps and 
 
 | File | What it is |
 |---|---|
-| `china_price_index_2026_v1.2.0.csv` | Flat table, one row per published price (UTF-8) |
-| `china_price_index_2026_v1.2.0.json` | Same records plus metadata and a procedure table with US references |
+| `china_price_index_2026_v1.2.1.csv` | Flat table, one row per published price (UTF-8) |
+| `china_price_index_2026_v1.2.1.json` | Same records plus metadata and a procedure table with US references |
 | `schema.ts` | Zod schema (validates the JSON) |
 | `METHODOLOGY.md` / `方法说明.md` | Sources, tiers, exclusions, conversion, limitations, corrections policy |
 | `DATASHEET.md` | Datasheet for datasets (motivation, composition, collection, uses) |
-| `key_findings.md` / `china_vs_us_price_index_2026.png` | v1.0.0 findings and chart (not yet regenerated for 1.2.0) |
-| `archive/v1.0.0/` | Previous release files |
 | `CITATION.cff` | Citation metadata |
-| `CHANGELOG.md` | Changes in 1.1.0 and 1.2.0 |
+| `key_findings.md` / `china_vs_us_price_index_2026.png` | v1.0.0 findings and chart (not yet regenerated) |
+| `archive/` | Previous release files |
+| `CHANGELOG.md` | Changes in 1.1.0, 1.2.0 and 1.2.1 |
 
 ## Columns (CSV)
 
@@ -31,7 +31,7 @@ China has no national treatment price list. This dataset puts official caps and 
 
 Empty cells mean no source was found. Read `figure_kind` and `inclusions` before comparing numbers: a device price, a cap and an all-inclusive package are different things.
 
-## Counts (v1.2.0)
+## Counts (v1.2.1)
 
 - By tier: a 53, b 14, c 39, u 9.
 - By source type: official 28, peer_reviewed 5, news 9, hospital_page 67, patient_reported 6.
@@ -42,24 +42,24 @@ Empty cells mean no source was found. Read `figure_kind` and `inclusions` before
 
 ```python
 import pandas as pd
-df = pd.read_csv("china_price_index_2026_v1.2.0.csv")
+df = pd.read_csv("china_price_index_2026_v1.2.1.csv")
 df[(df.procedure_slug == "mri") & (~df.patient_reported)][["tier", "entity", "cny_low", "cny_high", "source_url"]]
 ```
 
 ```ts
 import { PriceIndexFile } from "./schema";
-const data = PriceIndexFile.parse(JSON.parse(fs.readFileSync("china_price_index_2026_v1.2.0.json", "utf8")));
+const data = PriceIndexFile.parse(JSON.parse(fs.readFileSync("china_price_index_2026_v1.2.1.json", "utf8")));
 ```
 
 ## Publishing notes
 
-- **GitHub:** repository root as is. Add a release tag `v1.0.0`.
+- **GitHub:** repository root as is. Add a release tag per version (latest `v1.2.1`).
 - **Zenodo:** connect the GitHub repo, or upload the CSV, JSON, METHODOLOGY.md, 方法说明.md, DATASHEET.md and CITATION.cff. Resource type: Dataset. License: CC BY 4.0. Zenodo issues the DOI; add it to CITATION.cff afterwards.
 - **Kaggle / Hugging Face:** upload the CSV and JSON; paste the DATASHEET as the dataset card; set license CC BY 4.0.
 
 ## How to cite
 
-ChinaHealth (2026). *ChinaHealth Open China Treatment Price Index 2026* (Version 1.2.0) [Data set]. https://doi.org/10.5281/zenodo.23725366. Data checked 2026-10-28.
+ChinaHealth (2026). *ChinaHealth Open China Treatment Price Index 2026* [Data set]. https://doi.org/10.5281/zenodo.23684544 (concept DOI, always resolves to the latest version; this release is 1.2.1, version DOI 10.5281/zenodo.23735656). Data checked 2026-10-29.
 
 ## Corrections
 
@@ -67,5 +67,6 @@ Send a source link via chinahealth.info or open an issue. Every accepted change 
 
 ## Changelog
 
+- **1.2.1 (2026-10-29):** 115 records; 5 errata (cpi26-034 one eye toric lens, cpi26-092 single case, cpi26-058 cap note, cpi26-017/018 Bloomberg byline). No numbers changed.
 - **1.2.0 (2026-10-28):** 115 records; adds 14 international-tier records, `tier_group`, 16 errata (includes the unreleased 1.1.0 changes).
 - **1.0.0 (2026-10-27):** first release. 41 procedures, 92 records.

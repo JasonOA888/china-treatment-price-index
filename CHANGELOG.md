@@ -1,3 +1,13 @@
+## 1.2.1 (released 2026-10-29) - data checked 2026-10-29
+
+Errata only. 115 records, no prices changed, no records added or removed.
+
+- cpi26-034 (ICL, Xiamen Eye Center): the CNY 18,000 list price is for one eye with a toric lens; inclusions and notes now say so.
+- cpi26-092 (pediatric living-donor liver transplant, Renji): `figure_kind` reported_range to single_case; the source says "nearly 200,000 yuan" for one case.
+- cpi26-058 (PET/CT): note clarifies the figure is a cap (below CNY 5,000), display as "up to".
+- cpi26-017 and cpi26-018 (CAR-T): the Free Malaysia Today article is bylined Bloomberg (AFP supplied the photo); `source_title`, `entity` and notes corrected.
+- CITATION.cff and README now cite the concept DOI 10.5281/zenodo.23684544.
+
 ## 1.2.0 (released 2026-10-28) - data checked 2026-10-28
 
 Previous live version: 1.1.0 (101 records). Note: Zenodo still shows 1.0.0; 1.1.0 was never deposited, so the next Zenodo version can go straight to 1.2.0 and should list the 1.1.0 changes too.
