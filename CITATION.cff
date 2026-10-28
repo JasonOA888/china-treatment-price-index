@@ -3,7 +3,7 @@ message: "If you use this dataset, please cite it as below."
 type: dataset
 title: "ChinaHealth Open China Treatment Price Index 2026"
 version: 1.2.0
-doi: "10.5281/zenodo.23684545"
+doi: "10.5281/zenodo.23725366"
 date-released: 2026-10-28
 license: CC-BY-4.0
 authors:

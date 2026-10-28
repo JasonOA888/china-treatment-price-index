@@ -1,6 +1,6 @@
 # ChinaHealth Open China Treatment Price Index 2026 (v1.2.0)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23684545.svg)](https://doi.org/10.5281/zenodo.23684545)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23684544.svg)](https://doi.org/10.5281/zenodo.23684544)
 
 
 Published prices for **41 procedures** that foreign patients commonly seek in China, in **115 records** across three hospital tiers, each with a source URL, source type, publication date, check date (most checked 2026-10-27 or 2026-10-28) and confidence rating. 14 procedures carry a citable US reference price.
@@ -59,7 +59,7 @@ const data = PriceIndexFile.parse(JSON.parse(fs.readFileSync("china_price_index_
 
 ## How to cite
 
-ChinaHealth (2026). *ChinaHealth Open China Treatment Price Index 2026* (Version 1.2.0) [Data set]. https://doi.org/10.5281/zenodo.23684545. Data checked 2026-10-28.
+ChinaHealth (2026). *ChinaHealth Open China Treatment Price Index 2026* (Version 1.2.0) [Data set]. https://doi.org/10.5281/zenodo.23725366. Data checked 2026-10-28.
 
 ## Corrections
 
