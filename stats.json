@@ -1,67 +1,50 @@
 {
-  "rows": 92,
-  "procedures": 41,
-  "by_tier": {
-    "a": 45,
-    "u": 9,
-    "c": 27,
-    "b": 11
-  },
-  "by_source_type": {
-    "official": 24,
-    "peer_reviewed": 3,
-    "news": 7,
-    "hospital_page": 52,
-    "patient_reported": 6
-  },
-  "by_confidence": {
-    "high": 43,
-    "low": 11,
-    "medium": 38
-  },
-  "patient_reported": 8,
-  "procedures_with_us_ref": 14,
-  "tiers_per_procedure": {
-    "pci-stent": "a",
-    "cabg": "a",
-    "tavr": "a",
-    "svt-ablation": "a",
-    "knee-replacement": "acu",
-    "hip-replacement": "cu",
-    "acl-reconstruction": "c",
-    "knee-arthroscopy": "ac",
-    "endoscopic-lumbar-discectomy": "a",
-    "car-t": "au",
-    "proton-therapy": "a",
-    "vats-lobectomy": "a",
-    "gastrectomy-cancer": "a",
-    "rectal-cancer-surgery": "a",
-    "breast-cancer-surgery": "a",
-    "thyroidectomy": "ac",
-    "thyroid-cancer-surgery": "a",
-    "chemo-cycle-breast": "a",
-    "dental-implant": "a",
-    "implant-crown": "a",
-    "lasik": "c",
-    "smile": "ac",
-    "icl": "c",
-    "cataract": "ab",
-    "ivf-cycle": "a",
-    "health-checkup": "abc",
-    "mri": "abcu",
-    "ct": "abc",
-    "pet-ct": "a",
-    "gastroscopy": "abc",
-    "colonoscopy": "abc",
-    "vaginal-delivery": "abc",
-    "c-section": "abcu",
-    "lap-cholecystectomy": "acu",
-    "inguinal-hernia-repair": "ac",
-    "appendectomy": "acu",
-    "hemorrhoidectomy": "ac",
-    "hysterectomy": "ac",
-    "colon-polypectomy": "a",
-    "acupuncture": "ac",
-    "liver-transplant-pediatric": "a"
-  }
+ "rows": 115,
+ "new_international_records": 14,
+ "renumbered": "cpi26-101",
+ "by_tier": {
+  "a": 53,
+  "u": 9,
+  "c": 39,
+  "b": 14
+ },
+ "by_tier_group": {
+  "general": 53,
+  "unspecified": 9,
+  "international": 50,
+  "domestic_private": 3
+ },
+ "new_by_procedure": {
+  "knee-replacement": 1,
+  "hip-replacement": 1,
+  "cataract": 1,
+  "colonoscopy": 3,
+  "pci-stent": 1,
+  "health-checkup": 2,
+  "ivf-cycle": 1,
+  "dental-implant": 1,
+  "vaginal-delivery": 1,
+  "car-t": 2
+ },
+ "name_normalisations": [
+  "cpi26-093: procedure_zh '全髋关节置换术（单髋）' -> '全髋关节置换术（单侧）'",
+  "cpi26-095: procedure_zh '综合体检套餐' -> '综合健康体检套餐'",
+  "cpi26-100: procedure_zh '结肠息肉切除' -> '结肠息肉切除术'"
+ ],
+ "new_ids": [
+  "cpi26-102",
+  "cpi26-103",
+  "cpi26-104",
+  "cpi26-105",
+  "cpi26-106",
+  "cpi26-107",
+  "cpi26-108",
+  "cpi26-109",
+  "cpi26-110",
+  "cpi26-111",
+  "cpi26-112",
+  "cpi26-113",
+  "cpi26-114",
+  "cpi26-115"
+ ]
 }

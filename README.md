@@ -1,9 +1,9 @@
-# ChinaHealth Open China Treatment Price Index 2026 (v1)
+# ChinaHealth Open China Treatment Price Index 2026 (v1.2.0)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23684545.svg)](https://doi.org/10.5281/zenodo.23684545)
 
 
-Published prices for **41 procedures** that foreign patients commonly seek in China, in **92 records** across three hospital tiers, each with a source URL, source type, publication date, check date (2026-10-27) and confidence rating. 14 procedures carry a citable US reference price.
+Published prices for **41 procedures** that foreign patients commonly seek in China, in **115 records** across three hospital tiers, each with a source URL, source type, publication date, check date (most checked 2026-10-27 or 2026-10-28) and confidence rating. 14 procedures carry a citable US reference price.
 
 China has no national treatment price list. This dataset puts official caps and averages, public hospital package prices, VIP (特需) prices and private hospital prices side by side, with no numbers we could not source.
 
@@ -15,15 +15,15 @@ China has no national treatment price list. This dataset puts official caps and 
 
 | File | What it is |
 |---|---|
-| `china_price_index_2026_v1.csv` | Flat table, one row per published price (UTF-8) |
-| `china_price_index_2026_v1.json` | Same records plus metadata and a procedure table with US references |
+| `china_price_index_2026_v1.2.0.csv` | Flat table, one row per published price (UTF-8) |
+| `china_price_index_2026_v1.2.0.json` | Same records plus metadata and a procedure table with US references |
 | `schema.ts` | Zod schema (validates the JSON) |
 | `METHODOLOGY.md` / `方法说明.md` | Sources, tiers, exclusions, conversion, limitations, corrections policy |
 | `DATASHEET.md` | Datasheet for datasets (motivation, composition, collection, uses) |
-| `key_findings.md` | Five sourced findings, each with a caveat |
-| `china_vs_us_price_index_2026.png` | Chart: China range by tier vs US reference, 12 procedures, log scale |
+| `key_findings.md` / `china_vs_us_price_index_2026.png` | v1.0.0 findings and chart (not yet regenerated for 1.2.0) |
+| `archive/v1.0.0/` | Previous release files |
 | `CITATION.cff` | Citation metadata |
-| `build_index.py`, `make_chart.py` | Scripts that produce the CSV/JSON/stats and the chart |
+| `CHANGELOG.md` | Changes in 1.1.0 and 1.2.0 |
 
 ## Columns (CSV)
 
@@ -31,23 +31,24 @@ China has no national treatment price list. This dataset puts official caps and 
 
 Empty cells mean no source was found. Read `figure_kind` and `inclusions` before comparing numbers: a device price, a cap and an all-inclusive package are different things.
 
-## Counts (v1.0.0)
+## Counts (v1.2.0)
 
-- By tier: a 45, b 11, c 27, u 9.
-- By source type: hospital page 52, official 24, news 7, patient-reported 6, peer-reviewed 3. Patient-reported flag set on 8 records (includes 2 patient stories published on government sites).
-- By confidence: high 43, medium 38, low 11.
+- By tier: a 53, b 14, c 39, u 9.
+- By source type: official 28, peer_reviewed 5, news 9, hospital_page 67, patient_reported 6.
+- By confidence: high 57, low 15, medium 43.
+- New in 1.2.0: optional `tier_group` column, 14 international-tier records (cpi26-102 to cpi26-115), 16 errata fixes. See CHANGELOG.md.
 
 ## Quick start
 
 ```python
 import pandas as pd
-df = pd.read_csv("china_price_index_2026_v1.csv")
+df = pd.read_csv("china_price_index_2026_v1.2.0.csv")
 df[(df.procedure_slug == "mri") & (~df.patient_reported)][["tier", "entity", "cny_low", "cny_high", "source_url"]]
 ```
 
 ```ts
 import { PriceIndexFile } from "./schema";
-const data = PriceIndexFile.parse(JSON.parse(fs.readFileSync("china_price_index_2026_v1.json", "utf8")));
+const data = PriceIndexFile.parse(JSON.parse(fs.readFileSync("china_price_index_2026_v1.2.0.json", "utf8")));
 ```
 
 ## Publishing notes
@@ -58,7 +59,7 @@ const data = PriceIndexFile.parse(JSON.parse(fs.readFileSync("china_price_index_
 
 ## How to cite
 
-ChinaHealth (2026). *ChinaHealth Open China Treatment Price Index 2026* (Version 1.0.0) [Data set]. https://chinahealth.info/price-index. Data checked 2026-10-27.
+ChinaHealth (2026). *ChinaHealth Open China Treatment Price Index 2026* (Version 1.2.0) [Data set]. https://doi.org/10.5281/zenodo.23684545. Data checked 2026-10-28.
 
 ## Corrections
 
@@ -66,4 +67,5 @@ Send a source link via chinahealth.info or open an issue. Every accepted change 
 
 ## Changelog
 
+- **1.2.0 (2026-10-28):** 115 records; adds 14 international-tier records, `tier_group`, 16 errata (includes the unreleased 1.1.0 changes).
 - **1.0.0 (2026-10-27):** first release. 41 procedures, 92 records.

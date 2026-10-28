@@ -1,4 +1,5 @@
-// Zod schema for the ChinaHealth Open China Treatment Price Index 2026 (v1)
+// Zod schema for the ChinaHealth Open China Treatment Price Index 2026 (v1.2.0 draft)
+// Changes vs v1.0/v1.1: date_checked accepts any ISO date (new rows are 2026-10-28); optional tier_group added (additive, backward compatible).
 // Usage: import { PriceIndexFile } from "./schema"; PriceIndexFile.parse(json)
 import { z } from "zod";
 
@@ -9,6 +10,7 @@ export const TierLabel = z.enum([
   "private",
   "unspecified_department",
 ]);
+export const TierGroup = z.enum(["general", "international", "domestic_private", "unspecified"]);
 export const SourceType = z.enum([
   "official",
   "hospital_page",
@@ -55,7 +57,8 @@ export const PriceRecord = z
     source_type: SourceType,
     patient_reported: z.boolean(),
     date_published: isoDateish,
-    date_checked: z.literal("2026-10-27"),
+    date_checked: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+    tier_group: TierGroup.optional(),
     confidence: Confidence,
     notes: z.string(),
     us_ref_usd_low: money,
@@ -103,6 +106,7 @@ export const PriceIndexFile = z.object({
     tiers: z.record(Tier, z.string()),
     exclusions: z.string(),
     counts: z.object({ rows: z.number().int(), procedures: z.number().int() }),
+    tier_groups: z.record(z.string(), z.string()).optional(),
   }),
   procedures: z.array(Procedure),
   records: z.array(PriceRecord),
