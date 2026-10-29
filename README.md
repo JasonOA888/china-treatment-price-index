@@ -1,4 +1,6 @@
-# ChinaHealth Open China Treatment Price Index 2026 (v1.2.1)
+# ChinaHealth Treatment Price Index 2026 (v1.2.1)
+
+The open dataset behind [ChinaHealth](https://chinahealth.info), an independent, info-first guide for foreigners getting medical treatment in China. Browse it with sources on the site at **https://chinahealth.info/price-index**. Also known as the China Treatment Price Index.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23684544.svg)](https://doi.org/10.5281/zenodo.23684544)
 
@@ -59,7 +61,7 @@ const data = PriceIndexFile.parse(JSON.parse(fs.readFileSync("china_price_index_
 
 ## How to cite
 
-ChinaHealth (2026). *ChinaHealth Open China Treatment Price Index 2026* [Data set]. https://doi.org/10.5281/zenodo.23684544 (concept DOI, always resolves to the latest version; this release is 1.2.1, version DOI 10.5281/zenodo.23735656). Data checked 2026-10-29.
+ChinaHealth (2026). *ChinaHealth Treatment Price Index 2026* [Data set]. https://doi.org/10.5281/zenodo.23684544 (concept DOI, always resolves to the latest version; this release is 1.2.1, version DOI 10.5281/zenodo.23735656). Data checked 2026-10-29.
 
 ## Corrections
 
